@@ -18,7 +18,7 @@ Si c'est votre première visite, lisez d'abord les préliminaires.
     * [Le renommage d'un fichier/répertoire](#le-renommage-dun-fichierrépertoire)
     * [Suppression d'un fichier/répertoire](#suppression-dun-fichierrépertoire)
     * [Manipulation de branches](#manipulation-de-branches)
-* [Voir les pushs des autres avec Git et Gihub](#voir-les-pushs-des-autres-avec-git-et-gihub)
+* [Voir les pushs des autres avec Git et Github](#voir-les-pushs-des-autres-avec-git-et-gihub)
 
 
 ## Préliminaires
@@ -161,7 +161,7 @@ rm -rf se3-clients-linux/
 ### Update dépôt local
 
 **À faire régulièrement**, notamment avant de procéder soi-même à des
-modification du projet. Avec cette commande, on récupère toutes les
+modifications du projet. Avec cette commande, on récupère toutes les
 modifications (on appelle ça des commits) que les autres membres du
 projet ont éventuellement poussées sur le dépôt distant. Bref, cela
 permet d'avoir un dépôt local à jour par rapport au dépôt distant
@@ -218,9 +218,9 @@ pas sur le dépôt distant).
 N fichiers et regrouper tout cela en un seul commit. Il est toutefois
 recommandé de faire des commits les plus atomiques possibles (ie une
 modification, un commit, une modification un commit etc). En revanche,
-on n'est pas obligé de pusher chaque commit les uns après les autres.
+on n'est pas obligé de « pusher » chaque commit l'un après l'autre.
 On peut parfaitement faire N commits (en local donc) et pusher nos N
-commits en une fois.
+commits en une fois (`git push`, cela est détaillé dans la section suivante).
 
 ### Remonter les modifications sur le dépôt distant
 
@@ -401,6 +401,9 @@ git config --global user.name <votre-login-sur-github>
 git config --global user.email <votre-adresse-mail-de-contact-sur-github>
 ```
 
+N.B.: Si vous disposez d'autres comptes git pour d'autres projets, il est possible que vous ne souhaitiez pas configurer les éléments précédents de façon globale. Consultez alors [cette partie](#optionnel-configurer-plusieurs-comptes-git).
+
+
 En effet, Github se base sur la configuration du login et
 aussi du mail pour mettre un nom sur un utilisateur qui
 pushe. On peut faire sans le paramétrage ci-dessus (si vous
@@ -468,4 +471,26 @@ voulez que Git utilise `vim` par défaut à chaque fois que
 vous devez indiquer le commentaire d'un commit, vous pouvez
 mettre cette ligne `export EDITOR="vim"` dans le fichier
 `~/.bashrc` de votre home.
+
+
+## (optionnel) Configurer plusieurs comptes git
+
+Plutôt que de configurer vos identifiants github (user.name et user.email) de façon globale, il est possible de les déclarer de façon locale en se plaçant dans le dossier du projet se3 (par exemple `~/se3-clients-linux`) et en lançant les commandes suivantes sans l'option ̀`--global` :
+
+```sh
+cd ~/se3-clients-linux
+git config user.name <votre-login-sur-github-pour-le-projet-se3>
+git config user.email <votre-adresse-mail-de-contact-sur-github-pour-le-projet-se3>
+```
+
+Il est possible de vérifier que la configuration est correcte avec les commandes : 
+
+```sh
+git config user.name
+```
+et 
+```sh
+git config user.email 
+```
+Le résultat de ces commandes dépend du répertoire courant dans lequel vous les lancez.
 
