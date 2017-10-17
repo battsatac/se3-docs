@@ -21,10 +21,10 @@ L'installeur peut être téléchargé directement chez `Microsoft` sans restrict
 
 * **`Windows7` Pro 32 et 64 bits**  
 Il faut utiliser une version officielle sans personnalisations `OEM`, il est admis d'y ajouter les mises à jour ainsi que les drivers à l'aide d'outils tiers : voir
-[les outils](#outils) plus bas. En revanche aucune personnalistion de type `GPO` ne doit avoir été faite.
+[les outils](#outils) plus bas. En revanche aucune personnalisation de type `GPO` ne doit avoir été faite.
 En pratique, pour avoir un système à jour il faut déployer des milliers de mises à jour. C'est très lent ! Il vaut mieux installer W10 !
 
-* **`WindowsXP` n'est plus supporté**, ni par `SE3`, ni par `Microsoft`, ni par les applications récentes.  
+* **`Windows XP` n'est plus supporté**, ni par `SE3`, ni par `Microsoft`, ni par les applications récentes.  
 Si vous vous posez la question d'installer des postes `windowsXP`, [installez des `clients-linux`](../pxe-clients-linux/README.md#installation-de-clients-linux-debian-et-ubuntu-via-se3--intégration-automatique) !
 
 
@@ -36,13 +36,13 @@ Une seule partition `windows` + la petite partition de boot qui est créée auto
 
 Une astuce permet d'éviter la création de la partition de boot de 100Mo créée automatiquement à l'installation de Windows 7. Cela simplifie le clonage et la création d'images. Voici comment procéder.
 
-**Avant de lancer l'installation de Windows** (par exemple avec gparted inclu dans SystemRescuCD via le boot PXE) :
+**Avant de lancer l'installation de Windows** (par exemple avec gparted inclu dans SystemRescueCD via le boot PXE) :
 * supprimer toute partition du disque,
 * (re)créer une table de partition ms-dos (pas de gpt),
-* créer la partition destinnée à recevoir l'OS (100G suffisent),
+* créer la partition destinée à recevoir l'OS (100G suffisent),
 * formater cette partition en NTFS.
 
-Ainsi, lors de l'installation, en choisisannt cette partition, la partition de boot de 100Mo ne sera pas créée.
+Ainsi, lors de l'installation, en choisissant cette partition, la partition de boot de 100Mo ne sera pas créée.
 
 Il est possible d'avoir un double-boot `Gnu/Linux`, dans ce cas [vous laisserez un espace vide](../pxe-clients-linux/utilisation.md#installation-en-double-boot) en partageant le disque dur en deux parties sensiblement égales.
 
@@ -54,8 +54,7 @@ Boot `PXE` activé (soit systématiquement, soit manuellement avec `F12`).
 
 ## Drivers
 
-Tous les drivers utiles doivent être installés et à jour : voir
-[les outils](#outils) plus bas.
+Tous les pilotes utiles doivent être installés et à jour : voir [les outils](#outils) plus bas.
 
 
 ## Licence et activation
@@ -71,7 +70,7 @@ En cas d'absence d'activation, un message s'affiche en fond d'écran, mais à pa
 
 **Sur un serveur à jour, aucune opération manuelle n'est nécessaire pour intégrer windows 10**
 
-**A VERIFIER**
+**A VÉRIFIER**
 
 Il faut avoir créé un fichier témoin `temoin_w10.txt` vide dans le répertoire `netlogon\domscripts\`. Ensuite il suffit de se connecter sur `\\se3\admhomes` avec le compte `admin` et de lancer `\\se3\admhomes\netlogon\domscripts\rejointse3.exe`.
 
@@ -84,7 +83,7 @@ Fusionner le fichier .reg placé dans  \\se3\progs\install\domscripts (voir arti
 
 Il est possible d'automatiser un certain nombre de réglages, dans l'optique de faire une **image de la machine** avant l'intégration. À vous de choisir parmi les commandes suivantes, celles qui vous conviennent et les mettre dans un fichier `.bat`. 
 
-*Si l'image de la machine possède déjà l'utilisateurs adminse3, et que le mdp d'adminse3 est bien donné qu compte administrateur, alors l'intégration à distance de l'image déployée pourra se faire directement par l'interface.*
+*Si l'image de la machine possède déjà l’utilisateur adminse3, et que le mdp d'adminse3 est bien donné qu compte administrateur, alors l'intégration à distance de l'image déployée pourra se faire directement par l'interface.*
 
 * Désactiver les 3 pare-feux de Windows7 :
 
