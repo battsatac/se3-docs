@@ -87,6 +87,10 @@ Les seuls paramètres que j'ai modifié sont les chemins de stockage des fichier
 
 Vous pouvez alors indiquer où vous souhaitez enregistrer les fichiers pour les dossiers par défaut des machines dans l'onglet Général.
 
+**Important** : si vous souhaitez pouvoir utiliser les fonctionnalités de clonage et de boot TFTP sur les machines virtuelles, il est nécessaire d'installer le pack d'extension de Virtualbox disponible [ici](http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html#extpack).
+
+
+
 ## Installation des machines virtuelles
 
 ### Etape 1 : Installation d'IPCop
